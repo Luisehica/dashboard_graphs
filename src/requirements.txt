@@ -1,0 +1,21 @@
+###### Requirements without Version Specifiers ######`
+jupyterlab
+dash
+dash-bootstrap-components
+dash-html-components
+dash-renderer
+dash-table
+Flask
+Flask-Compress
+future
+plotly
+sqlalchemy
+psycopg2
+pandas
+gunicorn
+
+
+###### Requirements with Version Specifiers ######`
+
+
+##### Jupyter lab 

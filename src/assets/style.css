@@ -1,0 +1,88 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+body {
+  color:#4A494A;
+}
+/* Header */
+.title_header {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: medium;
+  font-size: 25px;
+  padding-right: 48%;
+  margin-left: 10px;
+  color:#4A494A;
+}
+
+#navbar-collapse li::marker {
+  list-style: none;
+  color: white;
+}
+
+.link-control{
+  color: #4A494A;
+  font-weight: normal;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+/*  */
+
+
+/* Main_page */
+
+.rigth_card {
+  padding: 15px 20px;
+  box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+  width: 500px;
+}
+
+.box_plot {
+  display:flex;
+  align-items: center;
+}
+
+.title_card {
+  text-align: center;
+}
+
+
+.KPI_Value{
+  display: block;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.box-2-lines p{
+  display:block;
+  text-align: center;
+  font-size: 24px;
+  line-height: 25px;
+}
+
+.KPI_Value_2{
+  font-size: 40px;
+  line-height: 55px;
+}
+
+.box-1-line {
+  display: block;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.box-1-line p {
+  font-size: 20px;
+  line-height: 25px;
+  height: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.h1 {
+  display: block;
+  width: 100%;
+}
