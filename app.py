@@ -1,8 +1,17 @@
+
+import os
+from random import randint
+
 import dash
 import dash_cytoscape as cyto
 import dash_html_components as html
 
-app = dash.Dash(__name__)
+import flask
+
+
+server = flask.Flask(__name__)
+server.secret_key = os.environ.get('secret key', str(randint(0, 1000000)))
+app = dash.Dash(__name__, server=server)
 
 app.layout = html.Div([
     cyto.Cytoscape(
