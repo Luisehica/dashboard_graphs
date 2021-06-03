@@ -1,44 +1,29 @@
-# Import dash 
+import os
+
+import dash
 import dash_core_components as dcc
-import dash_bootstrap_components as dbc
 import dash_html_components as html
 
-# Import plotly
-import plotly.graph_objects as go
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-# Import dependencies for callbacks
-from dash.dependencies import Input, Output, State
-from dash.exceptions import PreventUpdate
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+server = app.server
 
-# Connect to main app.py file, apps pages and backend
-from config import app, create_layout
-from apps import main
+app.layout = html.Div([
+    html.H2('Hello World'),
+    dcc.Dropdown(
+        id='dropdown',
+        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
+        value='LA'
+    ),
+    html.Div(id='display-value')
+])
 
-
-
-
-# Describe the layout/UI of the app
-app.layout = html.Div(
-    [
-        dcc.Location(id="url", refresh=False),
-        html.Div(id="page-content")
-    ]
-)
-
-
-
-### Callback for page salection
-@app.callback(Output(component_id='page-content', component_property='children'),
-    Input(component_id='url', component_property='pathname'))
-def display_page(pathname):
-    if pathname == '/help':
-        return create_layout(app, help)
-    else:
-        return create_layout(app, main)
-
-
-
+@app.callback(dash.dependencies.Output('display-value', 'children'),
+              [dash.dependencies.Input('dropdown', 'value')])
+def display_value(value):
+    return 'You have selected "{}"'.format(value)
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
