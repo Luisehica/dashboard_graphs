@@ -16,8 +16,6 @@ from app import app, create_layout
 from apps import main
 
 
-from datetime import timedelta
-
 
 
 # Describe the layout/UI of the app
@@ -43,4 +41,4 @@ def display_page(pathname):
 
 
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0',debug=True ,port=8080)
+    app.run_server(host='0.0.0.0' ,port=8080)
